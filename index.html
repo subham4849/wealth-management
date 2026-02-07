@@ -324,35 +324,85 @@
 </div>
 </div>
 <div class="p-10 lg:p-16 bg-white">
-<form class="space-y-6">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<label class="text-sm font-semibold text-slate-700" for="name">Full Name</label>
-<input class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-slate-50" id="name" placeholder="John Doe" type="text"/>
+  <form 
+    action="https://formsubmit.co/wateryblue88904@gmail.com" 
+    method="POST"
+    class="space-y-6"
+  >
+
+    <!-- Hidden settings -->
+    <input type="hidden" name="_subject" value="New Consultation Form Submission">
+    <input type="hidden" name="_captcha" value="false">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="space-y-2">
+        <label class="text-sm font-semibold text-slate-700" for="name">
+          Full Name
+        </label>
+        <input
+          class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-slate-50"
+          id="name"
+          name="Full Name"
+          placeholder="John Doe"
+          type="text"
+          required
+        />
+      </div>
+
+      <div class="space-y-2">
+        <label class="text-sm font-semibold text-slate-700" for="email">
+          Email Address
+        </label>
+        <input
+          class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-slate-50"
+          id="email"
+          name="Email"
+          placeholder="john@example.com"
+          type="email"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <label class="text-sm font-semibold text-slate-700" for="interest">
+        I'm interested in
+      </label>
+      <select
+        class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-slate-50 text-slate-600"
+        id="interest"
+        name="Interest"
+      >
+        <option>Mutual Funds</option>
+        <option>Portfolio Management</option>
+        <option>Tax Planning</option>
+        <option>General Consultation</option>
+      </select>
+    </div>
+
+    <div class="space-y-2">
+      <label class="text-sm font-semibold text-slate-700" for="message">
+        Message
+      </label>
+      <textarea
+        class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-slate-50 resize-none"
+        id="message"
+        name="Message"
+        placeholder="Tell us a bit about your financial goals..."
+        rows="4"
+      ></textarea>
+    </div>
+
+    <button
+      class="w-full py-4 rounded-lg bg-primary text-white font-bold text-base hover:bg-emerald-600 transition-colors shadow-lg shadow-primary/20"
+      type="submit"
+    >
+      Send Message
+    </button>
+
+  </form>
 </div>
-<div class="space-y-2">
-<label class="text-sm font-semibold text-slate-700" for="email">Email Address</label>
-<input class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-slate-50" id="email" placeholder="john@example.com" type="email"/>
-</div>
-</div>
-<div class="space-y-2">
-<label class="text-sm font-semibold text-slate-700" for="interest">I'm interested in</label>
-<select class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-slate-50 text-slate-600" id="interest">
-<option>Mutual Funds</option>
-<option>Portfolio Management</option>
-<option>Tax Planning</option>
-<option>General Consultation</option>
-</select>
-</div>
-<div class="space-y-2">
-<label class="text-sm font-semibold text-slate-700" for="message">Message</label>
-<textarea class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-slate-50 resize-none" id="message" placeholder="Tell us a bit about your financial goals..." rows="4"></textarea>
-</div>
-<button class="w-full py-4 rounded-lg bg-primary text-white font-bold text-base hover:bg-emerald-600 transition-colors shadow-lg shadow-primary/20" type="button">
-                                    Send Message
-                                </button>
-</form>
-</div>
+
 </div>
 </div>
 </section>
