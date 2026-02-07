@@ -9,6 +9,7 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
         }
         .heading-font {
             font-family: 'Playfair Display', serif;
@@ -57,7 +58,19 @@
                     <a href="about.html" class="text-gray-600 hover:text-emerald-600 transition font-medium">About Us</a>
                     <a href="contact.html" class="text-gray-600 hover:text-emerald-600 transition font-medium">Contact</a>
                 </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-600 focus:outline-none p-2" aria-label="Open menu">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
             </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 space-y-4 shadow-xl">
+            <a href="index.html" class="block text-gray-600 font-medium">Home</a>
+            <a href="services.html" class="block text-emerald-600 font-semibold">Services</a>
+            <a href="about.html" class="block text-gray-600 font-medium">About Us</a>
+            <a href="contact.html" class="block text-gray-600 font-medium">Contact</a>
         </div>
     </nav>
 
@@ -343,6 +356,19 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => menu.classList.add('hidden'));
+            });
+        }
+    </script>
 
 </body>
 </html>

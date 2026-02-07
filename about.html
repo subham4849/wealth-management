@@ -9,6 +9,7 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
         }
         .heading-font {
             font-family: 'Playfair Display', serif;
@@ -40,62 +41,74 @@
     <!-- Navigation -->
     <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+            <div class="flex justify-between items-center h-16 sm:h-20">
                 <div class="flex items-center space-x-2">
                    
-                    <span class="text-2xl font-bold text-gray-900">Wealth with Gagan</span>
+                    <span class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 whitespace-nowrap">Wealth with Gagan</span>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-emerald-600 transition font-medium">Home</a>
-                    <a href="services.html" class="text-gray-600 hover:text-emerald-600 transition font-medium">Services</a>
-                    <a href="about.html" class="text-emerald-600 font-semibold">About Us</a>
-                    <a href="contact.html" class="text-gray-600 hover:text-emerald-600 transition font-medium">Contact</a>
+                <div class="hidden md:flex space-x-6 lg:space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-emerald-600 transition font-medium text-sm lg:text-base">Home</a>
+                    <a href="services.html" class="text-gray-600 hover:text-emerald-600 transition font-medium text-sm lg:text-base">Services</a>
+                    <a href="about.html" class="text-emerald-600 font-semibold text-sm lg:text-base">About Us</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-emerald-600 transition font-medium text-sm lg:text-base">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-600 focus:outline-none p-2" aria-label="Open menu">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
                 </div>
             </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 space-y-3 sm:space-y-4 shadow-xl">
+            <a href="index.html" class="block text-gray-600 font-medium">Home</a>
+            <a href="services.html" class="block text-gray-600 font-medium">Services</a>
+            <a href="about.html" class="block text-emerald-600 font-semibold">About Us</a>
+            <a href="contact.html" class="block text-gray-600 font-medium">Contact</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <section class="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="text-center fade-in">
                 
-                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 heading-font">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 heading-font px-2">
                     Welcome to <span class="gradient-text">Wealth with Gagan</span>
                 </h1>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
                     We craft personalized investment plans rooted in your goals, risk comfort, and timeline, managing over ₹350+ crore with care and insight.
                 </p>
             </div>
 
             <!-- Stats Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover text-center">
-                    <div class="text-5xl font-bold text-emerald-600 mb-2">₹350Cr+</div>
-                    <p class="text-gray-600 font-medium">Assets Managed</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-600 mb-2">₹350Cr+</div>
+                    <p class="text-sm sm:text-base text-gray-600 font-medium">Assets Managed</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover text-center">
-                    <div class="text-5xl font-bold text-emerald-600 mb-2">800+</div>
-                    <p class="text-gray-600 font-medium">Trusted Investors</p>
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-600 mb-2">800+</div>
+                    <p class="text-sm sm:text-base text-gray-600 font-medium">Trusted Investors</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover text-center">
-                    <div class="text-5xl font-bold text-emerald-600 mb-2">7+</div>
-                    <p class="text-gray-600 font-medium">Years Experience</p>
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg card-hover text-center sm:col-span-2 md:col-span-1">
+                    <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-600 mb-2">7+</div>
+                    <p class="text-sm sm:text-base text-gray-600 font-medium">Years Experience</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Image Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="max-w-7xl mx-auto">
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl h-96 md:h-[500px]">
+            <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl h-64 sm:h-80 md:h-96 lg:h-[500px]">
                 <img src="https://images.unsplash.com/photo-1657663119025-71c8cd9d6539?auto=format&fit=crop&w=1400&q=80" 
                      alt="Professional wealth management consultation" 
                      class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                    <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 heading-font">
+                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 md:p-12">
+                    <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-4 heading-font">
                         Building Your Financial Future Together
                     </h3>
                     
@@ -105,151 +118,151 @@
     </section>
 
     <!-- Our Approach Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8">
+    <section class="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
                 <div>
-                    <p class="text-emerald-600 font-semibold text-sm uppercase tracking-wide mb-4">OUR APPROACH</p>
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 heading-font">
+                    <p class="text-emerald-600 font-semibold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4">OUR APPROACH</p>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 heading-font">
                         Client-Focused <span class="gradient-text">Excellence</span>
                     </h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                    <p class="text-gray-600 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
                         We believe in transparent, long-term partnerships, offering unbiased advice and continuous portfolio monitoring tailored just for you.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                    <div class="space-y-3 sm:space-y-4">
+                        <div class="flex items-start space-x-3 sm:space-x-4">
+                            <div class="w-7 h-7 sm:w-8 sm:h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">Transparent Communication</h4>
-                                <p class="text-gray-600">Clear, honest dialogue at every step of your investment journey</p>
+                                <h4 class="font-semibold text-gray-900 mb-1 text-sm sm:text-base">Transparent Communication</h4>
+                                <p class="text-gray-600 text-sm sm:text-base">Clear, honest dialogue at every step of your investment journey</p>
                             </div>
                         </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                        <div class="flex items-start space-x-3 sm:space-x-4">
+                            <div class="w-7 h-7 sm:w-8 sm:h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">Long-Term Partnerships</h4>
-                                <p class="text-gray-600">Building lasting relationships focused on your financial success</p>
+                                <h4 class="font-semibold text-gray-900 mb-1 text-sm sm:text-base">Long-Term Partnerships</h4>
+                                <p class="text-gray-600 text-sm sm:text-base">Building lasting relationships focused on your financial success</p>
                             </div>
                         </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                        <div class="flex items-start space-x-3 sm:space-x-4">
+                            <div class="w-7 h-7 sm:w-8 sm:h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">Unbiased Guidance</h4>
-                                <p class="text-gray-600">Advice tailored to your needs, not commission-driven products</p>
+                                <h4 class="font-semibold text-gray-900 mb-1 text-sm sm:text-base">Unbiased Guidance</h4>
+                                <p class="text-gray-600 text-sm sm:text-base">Advice tailored to your needs, not commission-driven products</p>
                             </div>
                         </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                        <div class="flex items-start space-x-3 sm:space-x-4">
+                            <div class="w-7 h-7 sm:w-8 sm:h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">Continuous Monitoring</h4>
-                                <p class="text-gray-600">Regular portfolio reviews and adjustments to stay aligned with your goals</p>
+                                <h4 class="font-semibold text-gray-900 mb-1 text-sm sm:text-base">Continuous Monitoring</h4>
+                                <p class="text-gray-600 text-sm sm:text-base">Regular portfolio reviews and adjustments to stay aligned with your goals</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="relative">
-                    <div class="bg-gradient-to-br from-emerald-500 to-green-600 rounded-3xl p-8 md:p-12 text-white shadow-2xl">
-                        <h3 class="text-3xl font-bold mb-6 heading-font">What Makes Us Different?</h3>
-                        <ul class="space-y-4 text-lg">
-                            <li class="flex items-start space-x-3">
-                                <svg class="w-6 h-6 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <div class="relative mt-8 lg:mt-0">
+                    <div class="bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white shadow-2xl">
+                        <h3 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 heading-font">What Makes Us Different?</h3>
+                        <ul class="space-y-3 sm:space-y-4 text-base sm:text-lg">
+                            <li class="flex items-start space-x-2 sm:space-x-3">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5 sm:mt-1" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                 </svg>
-                                <span>Personalized solutions designed for your unique situation</span>
+                                <span class="text-sm sm:text-base lg:text-lg">Personalized solutions designed for your unique situation</span>
                             </li>
-                            <li class="flex items-start space-x-3">
-                                <svg class="w-6 h-6 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <li class="flex items-start space-x-2 sm:space-x-3">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5 sm:mt-1" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                 </svg>
-                                <span>Transparency in all our dealings and recommendations</span>
+                                <span class="text-sm sm:text-base lg:text-lg">Transparency in all our dealings and recommendations</span>
                             </li>
-                            <li class="flex items-start space-x-3">
-                                <svg class="w-6 h-6 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <li class="flex items-start space-x-2 sm:space-x-3">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5 sm:mt-1" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                 </svg>
-                                <span>Long-term focus on sustainable wealth creation</span>
+                                <span class="text-sm sm:text-base lg:text-lg">Long-term focus on sustainable wealth creation</span>
                             </li>
-                            <li class="flex items-start space-x-3">
-                                <svg class="w-6 h-6 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <li class="flex items-start space-x-2 sm:space-x-3">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5 sm:mt-1" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                 </svg>
-                                <span>Dedicated monitoring and regular portfolio optimization</span>
+                                <span class="text-sm sm:text-base lg:text-lg">Dedicated monitoring and regular portfolio optimization</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-emerald-200 rounded-full -z-10 blur-2xl opacity-50"></div>
-                    <div class="absolute -top-6 -left-6 w-40 h-40 bg-green-200 rounded-full -z-10 blur-2xl opacity-50"></div>
+                    <div class="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 w-24 sm:w-32 h-24 sm:h-32 bg-emerald-200 rounded-full -z-10 blur-2xl opacity-50"></div>
+                    <div class="absolute -top-4 sm:-top-6 -left-4 sm:-left-6 w-28 sm:w-40 h-28 sm:h-40 bg-green-200 rounded-full -z-10 blur-2xl opacity-50"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQs Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <p class="text-emerald-600 font-semibold text-sm uppercase tracking-wide mb-4">FREQUENTLY ASKED</p>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 heading-font">
+            <div class="text-center mb-12 sm:mb-16">
+                <p class="text-emerald-600 font-semibold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4">FREQUENTLY ASKED</p>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 heading-font px-4">
                     Your <span class="gradient-text">Questions Answered</span>
                 </h2>
             </div>
 
-            <div class="space-y-6">
-                <div class="bg-gray-50 rounded-2xl p-8 card-hover">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">What services are offered?</h3>
-                    <p class="text-gray-600 leading-relaxed">We advise on mutual funds, AIF, PMS, and build tailored portfolios designed to meet your specific financial goals and risk tolerance.</p>
+            <div class="space-y-5 sm:space-y-6">
+                <div class="bg-gray-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 card-hover">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">What services are offered?</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">We advise on mutual funds, AIF, PMS, and build tailored portfolios designed to meet your specific financial goals and risk tolerance.</p>
                 </div>
 
-                <div class="bg-gray-50 rounded-2xl p-8 card-hover">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">How is my portfolio tailored?</h3>
-                    <p class="text-gray-600 leading-relaxed">Portfolios are customized based on your goals, risk profile, and investment horizon. We take time to understand your unique situation before making recommendations.</p>
+                <div class="bg-gray-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 card-hover">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">How is my portfolio tailored?</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Portfolios are customized based on your goals, risk profile, and investment horizon. We take time to understand your unique situation before making recommendations.</p>
                 </div>
 
-                <div class="bg-gray-50 rounded-2xl p-8 card-hover">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Why choose a wealth manager?</h3>
-                    <p class="text-gray-600 leading-relaxed">Expert research, disciplined asset allocation, unbiased guidance, goal planning, and ongoing reviews help you stay on track. We provide the expertise and discipline needed for long-term financial success.</p>
+                <div class="bg-gray-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 card-hover">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">Why choose a wealth manager?</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Expert research, disciplined asset allocation, unbiased guidance, goal planning, and ongoing reviews help you stay on track. We provide the expertise and discipline needed for long-term financial success.</p>
                 </div>
 
-                <div class="bg-gray-50 rounded-2xl p-8 card-hover">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">How many clients have you served?</h3>
-                    <p class="text-gray-600 leading-relaxed">We manage over 800 clients with ₹350+ crore in assets under management, building long-term relationships based on trust and results.</p>
+                <div class="bg-gray-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 card-hover">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">How many clients have you served?</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">We manage over 800 clients with ₹350+ crore in assets under management, building long-term relationships based on trust and results.</p>
                 </div>
 
-                <div class="bg-gray-50 rounded-2xl p-8 card-hover">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">How can I get in touch?</h3>
-                    <p class="text-gray-600 leading-relaxed">Reach us via email at <a href="mailto:Wealthwithgagan@gmail.com" class="text-emerald-600 font-semibold hover:underline">Wealthwithgagan@gmail.com</a> or WhatsApp at <a href="https://wa.me/919205550972" class="text-emerald-600 font-semibold hover:underline">9205550972</a>.</p>
+                <div class="bg-gray-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 card-hover">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">How can I get in touch?</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Reach us via email at <a href="mailto:Wealthwithgagan@gmail.com" class="text-emerald-600 font-semibold hover:underline break-all">Wealthwithgagan@gmail.com</a> or WhatsApp at <a href="https://wa.me/919205550972" class="text-emerald-600 font-semibold hover:underline whitespace-nowrap">9205550972</a>.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-gray-800">
+    <section class="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-gray-800">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 heading-font">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 heading-font px-4">
                 Ready to Grow Your Wealth?
             </h2>
-            <p class="text-xl text-gray-300 mb-8">
+            <p class="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 px-4">
                 Discover how we can help you achieve your financial goals.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="services.html" class="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition text-lg">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center px-4">
+                <a href="services.html" class="bg-white text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:shadow-lg transition text-base sm:text-lg">
                     View Our Services
                 </a>
             </div>
@@ -257,21 +270,21 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <footer class="bg-slate-900 text-white py-10 sm:py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold text-xl">₹</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+                <div class="col-span-1 sm:col-span-2 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-3 sm:mb-4">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-white font-bold text-lg sm:text-xl">₹</span>
                         </div>
-                        <span class="text-2xl font-bold">Wealth with Gagan</span>
+                        <span class="text-xl sm:text-2xl font-bold">Wealth with Gagan</span>
                     </div>
-                    <p class="text-gray-400 mb-4">Empowering you with the knowledge and strategies to build lasting wealth.</p>
+                    <p class="text-sm sm:text-base text-gray-400 mb-3 sm:mb-4">Empowering you with the knowledge and strategies to build lasting wealth.</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-gray-400">
+                    <h4 class="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Quick Links</h4>
+                    <ul class="space-y-2 text-sm sm:text-base text-gray-400">
                         <li><a href="index.html" class="hover:text-emerald-400 transition">Home</a></li>
                         <li><a href="services.html" class="hover:text-emerald-400 transition">Services</a></li>
                         <li><a href="about.html" class="hover:text-emerald-400 transition">About</a></li>
@@ -279,18 +292,31 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Contact</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>Wealthwithgagan@gmail.com</li>
+                    <h4 class="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Contact</h4>
+                    <ul class="space-y-2 text-sm sm:text-base text-gray-400">
+                        <li class="break-all">Wealthwithgagan@gmail.com</li>
                         <li>9205550972</li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+            <div class="border-t border-gray-800 pt-6 sm:pt-8 text-center text-gray-400 text-xs sm:text-sm">
                 <p>&copy; 2026 Wealth with Gagan. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => menu.classList.add('hidden'));
+            });
+        }
+    </script>
 
 </body>
 </html>
