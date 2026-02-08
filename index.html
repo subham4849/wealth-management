@@ -66,9 +66,17 @@
             <a href="contact.html" class="block text-gray-600 font-medium">Contact</a>
         </div>
     </nav>
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
 
 <!-- Hero Section -->
-<section class="relative mt-10 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20 overflow-hidden">
+<section class="relative pt-16 sm:pt-20 pb-12 sm:pb-16 lg:pb-20 overflow-hidden">
 
 
 <!-- Abstract Background Elements -->
